@@ -11,7 +11,7 @@ class Bottles
     "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
     "#{quantity(number)} #{container(number)} of beer.\n" +
     "#{action(number)}, " +
-    "#{quantity(predecessor(number))} #{container(predecessor(number))} of beer on the wall.\n"
+    "#{quantity(successor(number))} #{container(successor(number))} of beer on the wall.\n"
   end
 
   def container(number)
@@ -46,11 +46,11 @@ class Bottles
     end
   end
 
-  def predecessor(number)
+  def successor(number)
     if number == 0
       99
     else
-      number.pred
+      number - 1
     end
   end
 end
